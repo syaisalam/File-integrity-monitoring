@@ -1,9 +1,7 @@
 <h1>FIM - File Integrity Monitoring</h1>
 
 <h2>Description</h2>
-Project consists of a simple PowerShell script that walks the user through "zeroing out" (wiping) any drives that are connected to the system. The utility allows you to select the target disk and choose the number of passes that are performed. The PowerShell script will configure a diskpart script file based on the user's selections and then launch Diskpart to perform the disk sanitization.
-<br />
-
+This project aims to showcase one of the pillars of security from the CIA triad; the property of integrity. Integrity refers to the trustworthiness and consistency of data. This means that the original data is unchanged and if it does get change it will produce an alert to warn that its integrity is compromised. To showcase this, a simple FIM is produced which is basically an application that monitors important files, validating its integrity by using a verification method between the current state and a known baseline. FIM is referenced as one of a security control in frameworks and compliance documentations such as the PCI DSS (ID: W-06).
 
 <h2>Languages</h2>
 
