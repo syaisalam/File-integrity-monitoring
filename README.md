@@ -1,7 +1,7 @@
 <h1>FIM - File Integrity Monitoring</h1>
 
 <h2>Description</h2>
-This project aims to showcase one of the pillars of security from the CIA triad; the property of integrity. Integrity refers to the trustworthiness and consistency of data. This means that the original data is unchanged and if it does get change it will produce an alert to warn that its integrity is compromised. To showcase this, a simple FIM is produced which is basically an application that monitors important files, validating its integrity by using a verification method between the current state and a known baseline. FIM is referenced as one of a security control in frameworks and compliance documentations such as the PCI DSS (ID: W-06).
+This project serves as a demonstration highlighting a fundamental aspect of security encapsulated within the CIA triad: integrity. Integrity in this context revolves around the trustworthiness and consistency of data. This implies that the original data remains unaltered; any unauthorized modifications will trigger an alert, signaling a breach in its integrity. To vividly illustrate this concept, a simple File Integrity Monitoring (FIM) application is developed. Essentially, this application oversees crucial files, affirming their integrity by cross-referencing the present state against a baseline. Notably, FIM are referenced as a pivotal security control within established frameworks and compliance protocols, including the PCI DSS (ID: W-06).
 
 <h2>Languages</h2>
 
@@ -13,34 +13,40 @@ This project aims to showcase one of the pillars of security from the CIA triad;
 
 <h2>Program walk-through:</h2>
 
-<p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p align="left">
+The first part of the program allows two options for user input; option (A) requests new hashes for files whereas option (B) requests monitoring of existing files using a baseline previously created. For new files that has not been hashed, option A is recommended : <br/>
+<img src="https://imgur.com/le5JTnM.png" height="45%" width="45%" alt="Disk Sanitization Steps]"/> 
 <br />
 <br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+If option A is selected, all files in the folder will be hashed using SHA-512 and saved as baseline.txt : <br/>
+<img src="https://imgur.com/3wSdWE1.png" height="45%" width="45%" alt="Disk Sanitization Steps"/>
+<br /> 
 <br />
+Baseline.txt will showcase the file path and the hash generated for each file : <br/>
+<img src="https://i.imgur.com/U5IpYam.png" height="50%" width="60%" alt="Disk Sanitization Steps"/>
+<br /> 
 <br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+If option B is selected, the program will start monitoring for changes in the folder every one second as long as the program is kept open :<br/>
+<img src="https://i.imgur.com/xDrxSV1.png" height="45%" width="45%" alt="Disk Sanitization Steps"/>
+<br /> 
 <br />
+The program cross-checks against the baseline for changes in the folder. It does this in three ways; (1) by checking for addition/creation of new files :  <br/>
+<img src="https://i.imgur.com/dYotuSX.png" height="45%" width="45%" alt="Disk Sanitization Steps"/>
+<br /> 
 <br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+(2) by checking for compromise in the integrity of the file :  <br/>
+<img src="https://i.imgur.com/pwVEwsO.png" height="45%" width="45%" alt="Disk Sanitization Steps"/>
+<br /> 
 <br />
+(3) by checking for deletion of files :  <br/>
+<img src="https://i.imgur.com/ZukwUr7.png" height="45%" width="45%" alt="Disk Sanitization Steps"/>
+<br /> 
 <br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+If any of the conditions are met, the program sends out alerts according to each of the condition, as shown below in green, yellow and red respectively :  <br/>
+<img src="https://i.imgur.com/9xRzEzN.png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+<br /> 
 <br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+</p> 
 
 <!--
  ```diff
